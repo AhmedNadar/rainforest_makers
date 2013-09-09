@@ -1,7 +1,7 @@
 
 <p>Name: <%= @product.name %></p>
 <p>Description: <%= @product.description %></p>
-<p>Price: <%= @product.price_in_cents %></p>
+<p>Price: <%= @product.formatted_price %></p>
 
 <%= link_to 'Back to Home', products_path %>
 <%= link_to 'New', new_product_path %>
