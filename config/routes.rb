@@ -1,13 +1,10 @@
 RainforestMakers::Application.routes.draw do
-  # get "products/index"
+  get "users/new"
+  get "users/create"
 
-  # get "products/show"
-
-  # get "products/new"
-
-  # get "products/edit"
 
   resources :products
+  resources :users, :only => [:new, :create]
   
   root :to => "products#index"
 
