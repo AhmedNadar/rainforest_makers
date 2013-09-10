@@ -11,6 +11,10 @@ class ProductsController < ApplicationController
   def show
   	@product = Product.find(params[:id])
 
+    if current_user
+      @review = @product.review.build
+    end
+
   	respond_to do |format|
   		format.html #index.html.erb
   		format.json{render json: @product}

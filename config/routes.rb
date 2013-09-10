@@ -1,4 +1,10 @@
 RainforestMakers::Application.routes.draw do
+  get "reviews/show"
+
+  get "reviews/new"
+
+  get "reviews/edit"
+
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"
@@ -8,7 +14,9 @@ RainforestMakers::Application.routes.draw do
 
 
   resources :products
-  resources :users, :only => [:new, :create, :destroy]
+  resources :users, :only => [:new, :create]
+  resources :sessions, :only => [:new, :create, :destroy]
+
   
   root :to => "products#index"
 
