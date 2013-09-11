@@ -13,7 +13,10 @@ RainforestMakers::Application.routes.draw do
   get "users/create"
 
 
-  resources :products
+  resources :products do
+    resources :reviews, :except => [:index]
+  end
+
   resources :users, :only => [:new, :create]
   resources :sessions, :only => [:new, :create, :destroy]
 

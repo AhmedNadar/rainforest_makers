@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   	@product = Product.find(params[:id])
 
     if current_user
-      @review = @product.review.build
+      @review = @product.reviews.build
     end
 
   	respond_to do |format|
